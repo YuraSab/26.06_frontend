@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Link, NavLink, Route, Routes, Navigate} from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import DashBoard from "./components/DashBoard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const getActiveStyle = ( {isActive}: { isActive: boolean } ) => ({
+        color: isActive ? "black" : "azure"
+    });
+
+    return (
+        <BrowserRouter>
+            <nav>
+                <NavLink to={"/home"} style={getActiveStyle}>Home</NavLink>
+                <NavLink to={"/about"} style={getActiveStyle}>About</NavLink>
+                <NavLink to={"/dashboard"} style={getActiveStyle}>Dashboard</NavLink>
+            </nav>
+            <main>
+                <Routes>
+                    <Route path={"/"} element={<Navigate to={"/home"}/>}/>
+                    <Route path={"/home"} element={<Home/>}/>
+                    <Route path={"/about"} element={<About/>}/>
+                    <Route path={"/dashboard"} element={<DashBoard/>}/>
+                </Routes>
+            </main>
+        </BrowserRouter>
+    );
 }
 
 export default App;
