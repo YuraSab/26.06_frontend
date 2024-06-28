@@ -8,34 +8,6 @@ import {MetricType} from "../models/Metric";
 
 const DashBoard = () => {
 
-    // const metricsData: MetricType[] = [
-    //     {
-    //         id: 1,
-    //         data: [4, 2, 4, 7, 9, 10, 8, 6],
-    //         author: "Khabib",
-    //         caption: "Product price",
-    //         about: "My metrics",
-    //         date: "20.10.2023",
-    //     },
-    //     {
-    //         id: 2,
-    //         data: [1, 2, 7, 7, 7, 6, 8, 10],
-    //         author: "Buldiga",
-    //         caption: "Company shares",
-    //         about: "My metrics",
-    //         date: "10.10.2023",
-    //     },
-    //     {
-    //         id: 3,
-    //         data: [1, 2, 4, 5, 4, 6, 8, 10],
-    //         author: "Chell",
-    //         caption: "Personal amount",
-    //         about: "My metrics",
-    //         date: "25.10.2023",
-    //     }
-    // ];
-
-
     const [metrics, setMetrics] = useState<MetricType[]>([]);
 
     useEffect(() => {

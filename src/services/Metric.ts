@@ -7,8 +7,8 @@ class MetricService {
 
     async fetchMetrics(): Promise<MetricType[]> {
         try {
-            // const response = await axios.get<MetricType[]>(`${this.backendURL}/api/metrics`);
-            const response = await axios.get<MetricType[]>(`http://localhost:8080/api/metrics`);
+            const response = await axios.get<MetricType[]>(`${this.backendURL}/api/metrics`);
+            // const response = await axios.get<MetricType[]>(`http://localhost:8080/api/metrics`);
             console.log("response", response);
             return response.data;
         } catch ( error ) {
